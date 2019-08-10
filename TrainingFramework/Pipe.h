@@ -22,10 +22,16 @@ public:
 	float		GetColliderSizeY();
 
 	void		SetPosY(int pos);
+
+	void		Updown();
+	void		SetMoveY(bool status);
+	bool		GetMoveY();
+
 	int		    GetPosY();
 
 private:
 	bool	m_active;
+	bool	m_moveY;
 	float	m_SizeColliderX;
 	float	m_SizeColliderY;
 	float   m_PosY;

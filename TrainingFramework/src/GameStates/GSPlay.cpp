@@ -135,6 +135,7 @@ void GSPlay::Update(float deltaTime)
 
 			srand(time(0));
 			int a = rand() % 40 + 1;
+			std::cout << a << std::endl;
 
 			CreatRandomPipeDown(a);
 			CreatRandomPipeUp(a);
@@ -180,7 +181,7 @@ void GSPlay::Update(float deltaTime)
 	if (m_Bird->IsAlive())
 	{
 		m_Bird->Update(deltaTime);
-		m_Bird->CheckColider(m_listPipeUp, m_listPipeDown);
+		//m_Bird->CheckColider(m_listPipeUp, m_listPipeDown);
 	}
 
 
@@ -245,6 +246,7 @@ void GSPlay::CreatRandomPipeUp(int x)
 	{
 		if (!pipe->IsActive())
 		{
+			if (x > 35) pipe->SetMoveY(true);
 			pipe->SetActive(true);
 			pipe->Set2DPosition(posUp);
 			return;
@@ -274,6 +276,7 @@ void GSPlay::CreatRandomPipeDown(int x)
 	{
 		if (!pipe->IsActive())
 		{
+			if (x > 35) pipe->SetMoveY(true);
 			pipe->SetActive(true);
 			pipe->Set2DPosition(posDown);
 			return;

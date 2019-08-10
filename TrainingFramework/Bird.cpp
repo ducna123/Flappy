@@ -87,6 +87,7 @@ void Bird::CheckColider(std::list<std::shared_ptr<Pipe>>& listPipeUp, std::list<
 	}
 
 	if(pos.y > 380) SetIsAlive(false);
+	if(pos.y < -10) SetIsAlive(false);
 
 }
 
